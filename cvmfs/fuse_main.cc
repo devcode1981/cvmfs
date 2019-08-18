@@ -110,7 +110,7 @@ int main(int argc, char **argv) {
 #endif
   }
 
-  void *library_handle;
+  void *library_handle = NULL;
   std::vector<std::string>::const_iterator i    = library_paths.begin();
   std::vector<std::string>::const_iterator iend = library_paths.end();
   for (; i != iend; ++i) {

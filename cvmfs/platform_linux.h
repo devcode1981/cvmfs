@@ -333,7 +333,7 @@ inline uint64_t platform_monotonic_time_ns() {
   struct timespec tp;
   int retval = clock_gettime(CLOCK_MONOTONIC, &tp);
   assert(retval == 0);
-  return tp.tv_sec*1e9 + tp.tv_nsec;
+  return uint64_t(tp.tv_sec) * 1000000000L + tp.tv_nsec;
 }
 
 inline uint64_t platform_memsize() {
